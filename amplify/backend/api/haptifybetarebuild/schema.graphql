@@ -1,0 +1,50 @@
+type Role @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String
+}
+
+type HapticEffect @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime
+  PointXAmplitude: [Int!]
+  PointYAmplitude: [Int!]
+  PointXFrequency: [Int!]
+  pointYFrequency: [Int!]
+  userID: ID! @index(name: "byUser")
+}
+
+type BetaData @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  companyName: String!
+  companyPosition: String!
+  betaRegisterAt: AWSDateTime!
+  User: User @hasOne
+}
+
+type Plan @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String!
+  price: Int!
+  Users: [User] @hasMany(indexName: "byPlan", fields: ["id"])
+  currency: String!
+}
+
+type User @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  firstName: String!
+  lastName: String!
+  email: AWSEmail!
+  phoneNumber: AWSPhone
+  password: String
+  currentPlanStartAt: AWSDateTime
+  curentPlanEndAt: AWSDateTime
+  createdAt: AWSDateTime
+  deletedAt: AWSDateTime
+  HapticEffects: [HapticEffect] @hasMany(indexName: "byUser", fields: ["id"])
+  Role: Role @hasOne
+  modifiedAt: AWSDateTime
+  planID: ID @index(name: "byPlan")
+}
+ 

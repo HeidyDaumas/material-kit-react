@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-haptifybetavivatech-dev-26f27-authRole",
+      "UnauthRoleArn": "arn:aws:iam::911203941239:role/amplify-haptifybetavivatech-dev-26f27-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::911203941239:role/amplify-haptifybetavivatech-dev-26f27-authRole",
+      "Region": "eu-west-3",
+      "DeploymentBucketName": "amplify-haptifybetavivatech-dev-26f27-deployment",
+      "UnauthRoleName": "amplify-haptifybetavivatech-dev-26f27-unauthRole",
+      "StackName": "amplify-haptifybetavivatech-dev-26f27",
+      "StackId": "arn:aws:cloudformation:eu-west-3:911203941239:stack/amplify-haptifybetavivatech-dev-26f27/3266b1e0-0b8d-11ef-93a4-0a291f06c06f",
+      "AmplifyAppId": "d1wjj2qedfa703"
+    }
+  }
+}
